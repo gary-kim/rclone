@@ -42,9 +42,6 @@ addons:
       - libfuse-dev
       - rpm
       - pkg-config
-cache:
-  directories:
-    - $HOME/.cache/go-build
 matrix:
   allow_failures:
     - go: tip
@@ -71,9 +68,6 @@ matrix:
       go: 1.12.x
       env:
         - GOTAGS=  # cmount doesn't work on osx travis for some reason
-      cache:
-        directories:
-          - $HOME/Library/Caches/go-build
       script:
         - make
         - make quicktest
